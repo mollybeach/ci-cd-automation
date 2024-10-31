@@ -21,3 +21,40 @@ This project demonstrates the setup of a CI/CD pipeline for a Node.js applicatio
 
 ## Tests
 - Run tests locally: `npm test`
+
+## CI/CD Pipeline Setup
+
+### GitHub Actions Configuration
+1. Create `.github/workflows/ci.yml` for automated testing
+2. Configure GitHub repository secrets if needed
+3. Enable GitHub Actions in repository settings
+
+### Jenkins Setup
+1. Install required Jenkins plugins:
+   - GitHub plugin
+   - GitHub Integration Plugin
+   - Pipeline plugin
+   - NodeJS plugin
+2. Create new Jenkins pipeline job
+3. Configure webhook: `http://<jenkins-server-url>/github-webhook/`
+4. Set up environment variables in Jenkins
+
+### Deployment
+1. Configure deployment credentials in Jenkins
+2. Update Jenkinsfile with deployment steps
+3. Push changes to trigger the pipeline
+
+## Project Structure
+
+ci-cd-automation/
+── .github/
+│ └── workflows/
+│ └── ci.yml
+├── src/
+│ └── app.js
+├── tests/
+│ └── app.test.js
+├── Jenkinsfile
+├── README.md
+├── package.json
+└── .gitignore
