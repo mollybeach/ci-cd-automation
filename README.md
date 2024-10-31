@@ -63,3 +63,74 @@ ci-cd-automation/
 ├── package.json
 └── README.md
 ```
+
+## What is Jenkins?
+
+Jenkins is an open-source automation server that helps developers build, test, and deploy their applications. Think of it as an automated assistant that handles repetitive tasks in the development process.
+
+### Key Features
+- **Automation**: Automatically builds and tests code when changes are made
+- **Integration**: Works with many tools and services (GitHub, GitLab, etc.)
+- **Pipeline Management**: Creates automated workflows (Code → Test → Build → Deploy)
+
+### Benefits
+- **Time Saving**: Automates repetitive tasks and speeds up development cycles
+- **Quality Control**: Ensures consistent testing and early bug detection
+- **Reliability**: Provides standardized deployment process with reduced human error
+
+# Jenkins Setup Guide
+
+## Access Jenkins
+```bash
+http://localhost:8080/
+```
+
+## 1. Install Required Plugins
+1. Navigate to `Manage Jenkins` > `Plugins` > `Available`
+2. Search and install the following plugins:
+   - NodeJS Plugin
+   - GitHub Plugin
+   - Pipeline
+   - Git plugin
+3. Click "Install without restart"
+
+## 2. Configure NodeJS
+1. Navigate to `Manage Jenkins` > `Tools` > `Global Tool Configuration`
+2. Under NodeJS section:
+   - Click "Add NodeJS"
+   - Name: `Node-18` (or `Node-20`)
+   - Version: Select `18.x` (LTS) or `20.x` (Latest LTS)
+3. Click "Save"
+
+## 3. Create Pipeline
+1. Click "New Item"
+2. Enter project name: `ci-cd-automation`
+3. Select "Pipeline"
+4. Click "OK"
+
+## 4. Configure Pipeline
+Navigate through each section and configure as follows:
+
+### General Settings
+- ✓ Check "GitHub project"
+- Enter your GitHub repository URL
+
+### Build Triggers
+- ✓ Check "GitHub hook trigger for GITScm polling"
+
+### Pipeline Settings
+- Definition: `Pipeline script from SCM`
+- SCM: `Git`
+- Repository URL: `[Your GitHub Repository URL]`
+- Branch Specifier: `*/main`
+- Script Path: `Jenkinsfile`
+
+### Save Configuration
+Click "Save" to complete setup
+
+## Verification
+After saving, your pipeline should be ready to:
+- Detect changes from GitHub
+- Run automated builds
+- Execute tests
+- Deploy (if configured)
