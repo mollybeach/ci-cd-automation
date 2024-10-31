@@ -9,7 +9,7 @@ describe('API Tests', () => {
       .expect(200);
 
     expect(response.body).toEqual({
-      message: 'Welcome to CI/CD Automation API'
+      message: 'Welcome to CI/CD Automation API',
     });
   });
 });

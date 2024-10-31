@@ -46,15 +46,20 @@ This project demonstrates the setup of a CI/CD pipeline for a Node.js applicatio
 
 ## Project Structure
 
+```
 ci-cd-automation/
-── .github/
-│ └── workflows/
-│ └── ci.yml
+├── .git/
+├── .github/
+│   └── workflows/
+│   │   └── ci.yml
+├── node_modules/
 ├── src/
-│ └── app.js
+│   └── app.js
 ├── tests/
-│ └── app.test.js
-├── Jenkinsfile
-├── README.md
+│   └── app.test.js
+├── .eslintrc.json
+├── .gitignore
+├── package-lock.json
 ├── package.json
-└── .gitignore
+└── README.md
+```
